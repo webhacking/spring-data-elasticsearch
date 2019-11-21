@@ -1,13 +1,5 @@
 language: java
 
-before_install:
-  - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.deb && sudo dpkg -i --force-confnew elasticsearch-${ES_VERSION}.deb && sudo service elasticsearch restart
-  - sleep 10
-
-env:
-  global:
-  - ES_VERSION=6.5.1
-
 sudo: true
 
-script: "./mvnw -Pjava11 clean dependency:list test -Dsort"
+script: "./mvnw -Pjava11 clean dependency:list test -Dsort -U -B"
