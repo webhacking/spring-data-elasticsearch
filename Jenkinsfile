@@ -56,10 +56,10 @@ pipeline {
 					}
 				}
 
-				stage("test: baseline (jdk13)") {
+				stage("test: baseline (jdk12)") {
 					agent {
 						docker {
-							image 'adoptopenjdk/openjdk13:latest'
+							image 'adoptopenjdk/openjdk12:latest'
 							label 'data'
 							args '-v $HOME:/tmp/jenkins-home'
 						}
